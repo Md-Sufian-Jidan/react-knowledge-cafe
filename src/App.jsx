@@ -1,14 +1,16 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
+import Blogs from './Components/Blogs/Blogs'
+import Header from './Components/Header/Header'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      
-      <h1 className='text-6xl bg-red-700 text-blue-300'>Vite + React</h1>
-      
+      <Header></Header>
+      <Blogs></Blogs>
+      {/* <Blog></Blog> */}
     </>
   )
 }
