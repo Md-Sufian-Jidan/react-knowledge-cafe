@@ -2,6 +2,7 @@
 import './App.css'
 import Blogs from './Components/Blogs/Blogs'
 import Header from './Components/Header/Header'
+import BookMarks from './Components/bookMarks/BookMarks'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -9,8 +10,11 @@ function App() {
   return (
     <>
       <Header></Header>
+      <main className='md:flex'>
       <Blogs></Blogs>
-      {/* <Blog></Blog> */}
+      <BookMarks></BookMarks>
+
+      </main>
     </>
   )
 }
