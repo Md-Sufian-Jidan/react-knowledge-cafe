@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import { FaBookmark } from "react-icons/fa6";
 
 
-const Blog = ({blog, handleBookMarks}) => {
+const Blog = ({blog, handleBookMarks, handleMarkAsRead}) => {
     // console.log(blog);
     const {title, cover, author,author_img,posted_date ,reading_time,hashtags} = blog;
     return (
-        <div className='mb-20'>
+        <div className='mb-20 space-y-4'>
             <img className='w-full mb-8' src={cover} alt={`cover picture of the title ${title}`} />
             <div className='flex justify-between mb-4'>
                 <div className='flex items-center'>
@@ -23,7 +23,9 @@ const Blog = ({blog, handleBookMarks}) => {
             </div>
             <h2 className='text-3xl'>{title}</h2>
             <p className='my-2'>{
-                hashtags.map((hash, idx) => <span className='mx-2' key={idx}><a>#{hash}</a></span>)}</p>
+                hashtags.map((hash, idx) => <span className='mx-2' key={idx}><a>#{hash}</a></span>)}
+                </p>
+                <button onClick={() =>handleMarkAsRead(reading_time)} className='text-purple-800 underline font-bold'>Mark As Read</button>
         </div>
     );
 };
@@ -31,6 +33,7 @@ const Blog = ({blog, handleBookMarks}) => {
 Blog.propTypes = {
     // second ar p capital letter aa
     blog: PropTypes.object.isRequired,
-    handleBookMarks: PropTypes.func.isRequired
+    handleBookMarks: PropTypes.func.isRequired,
+    handleMarkAsRead: PropTypes.func.isRequired
 }
 export default Blog;
